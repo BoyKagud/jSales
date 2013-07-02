@@ -1,5 +1,10 @@
 package ui;
 
+/*
+ * Author: Ricardo Benitez
+ * Contributors: Cyril Yaranon, Justin Dela Cruz
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
