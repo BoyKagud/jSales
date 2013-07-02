@@ -1,4 +1,4 @@
 jSales
 ======
 
-a simple, java built, Point of Sales application.
+a simple, java based, Point of Sales application.
