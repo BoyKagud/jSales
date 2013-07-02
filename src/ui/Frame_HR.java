@@ -121,5 +121,8 @@ public class Frame_HR extends JPanel {
 		set.close();
 		sql.destruct();
 	}
-
+	/*
+	 * Author: Ricardo Benitez
+	 * Contributors: Cyril Yaranon, Justin Dela Cruz
+	 */
 }

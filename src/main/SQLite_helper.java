@@ -8,7 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import extras.md5;
-
+/*
+ * Author: Ricardo Benitez
+ * Contributors: Cyril Yaranon, Justin Dela Cruz
+ */
 public class SQLite_helper {
 	
     private final String urlToDb = "jdbc:sqlite:iBusinessMate.db";
