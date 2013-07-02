@@ -47,7 +47,6 @@ public class MainFrame {
 	JPanel inventoryPane;
 	JPanel transactionPane;
 	JPanel HRPane;
-	JPanel ICPane;
 	final JPanel menuPanel = new JPanel() {
         @Override
         protected void paintComponent(Graphics grphcs) {
@@ -85,7 +84,6 @@ public class MainFrame {
 		inventoryPane = new Frame_Inventory();
 		transactionPane = new Frame_Transaction();
 		HRPane = new Frame_HR();
-		ICPane = new Frame_IC();
 		
 	    Image icon = Toolkit.getDefaultToolkit().getImage("img/favicon.jpg");
 		mainFrame = new JFrame("jSales v1.0");
@@ -149,9 +147,6 @@ public class MainFrame {
 			JMenuItem Transaction = new buttonHoverEffect(menuPanel, "Transaction");
 			
 			JMenuItem hr = new buttonHoverEffect(menuPanel, "Human Resource");
-			
-			JMenuItem Miscellaneous = new buttonHoverEffect(menuPanel, "Miscellaneous");
-			Miscellaneous.setBorder(new EmptyBorder(0, 0, 0, 10));
 													
 			JMenuItem logout = new buttonHoverEffect(menuPanel, "LogOut");
 			logout.setHorizontalAlignment(SwingConstants.CENTER);
@@ -169,7 +164,6 @@ public class MainFrame {
 			if(admin == 1){
 				this.add(hr);
 			}
-			this.add(Miscellaneous);
 			this.add(Box.createGlue());
 			this.add(logout);
 			
@@ -221,11 +215,7 @@ public class MainFrame {
 							HRPane.setVisible(true);
 							mainFrame.getContentPane().add(HRPane, BorderLayout.CENTER);
 							k.getLayoutComponent(BorderLayout.CENTER).setVisible(true);
-						} else if(name.equals("Miscellaneous")) {
-							ICPane.setVisible(true);
-							mainFrame.getContentPane().add(ICPane, BorderLayout.CENTER);
-							k.getLayoutComponent(BorderLayout.CENTER).setVisible(true);
-						}
+						} 
 					
 					}				
 				}
