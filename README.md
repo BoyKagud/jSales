@@ -3,6 +3,9 @@ jSales
 
 >a simple, java based, Point of Sales application.
 
+![screenshot](http://www.limecodes.com/weetune.com/jSales_Screen.png)
+
+
 Features
 --------
 
