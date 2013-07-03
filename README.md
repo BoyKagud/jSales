@@ -15,7 +15,7 @@ Features
 Known Limitations
 -----------------
 
->Barcodes not yet supported. currently relies on serial number input.
+>Barcodes not yet supported. currently relies on serial number input. Due to too much simplicity, checkouts are still not recorded to the Database. No report generation. Hopefully all of these will be applied to the next version to be released.
 
 Compiling
 ---------
