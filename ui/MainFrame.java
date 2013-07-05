@@ -1,9 +1,8 @@
-package ui;
-
 /*
- * Author: Ricardo Benitez
- * Contributors: Cyril Yaranon, Justin Dela Cruz
+ * Copyright (c) 2013 LimeCodes Media
+ * See the file license.txt for copying permission.
  */
+package ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

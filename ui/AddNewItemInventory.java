@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2013 LimeCodes Media
+ * See the file license.txt for copying permission.
+ */
 package ui;
 
 import java.awt.EventQueue;
