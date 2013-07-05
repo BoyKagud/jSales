@@ -86,7 +86,7 @@ public class MainFrame {
 		HRPane = new Frame_HR();
 		
 	    Image icon = Toolkit.getDefaultToolkit().getImage("img/favicon.jpg");
-		mainFrame = new JFrame("jSales v1.0");
+		mainFrame = new JFrame();
 		mainFrame.setIconImage(icon);
 		mainFrame.setBounds(bounds);
 		mainFrame.setMinimumSize(new Dimension((int) Math.floor(scrWidth)-200, (int) Math.floor(scrHeight)-200));
@@ -157,13 +157,9 @@ public class MainFrame {
 				}
 			});
 				
-			if(admin == 1) {
-				this.add(Inventory);
-			}
+			if(admin == 1) this.add(Inventory);
 			this.add(Transaction);
-			if(admin == 1){
-				this.add(hr);
-			}
+			if(admin == 1) this.add(hr);
 			this.add(Box.createGlue());
 			this.add(logout);
 			
@@ -174,7 +170,7 @@ public class MainFrame {
 			int selection = JOptionPane.showConfirmDialog(
 	                null
 	        , "This will exit the program"
-	        , "LogOut iBusiness Mate"
+	        , "LogOut jSales"
 	        , JOptionPane.OK_CANCEL_OPTION
 	        , JOptionPane.INFORMATION_MESSAGE);   
 			if (selection == JOptionPane.OK_OPTION)

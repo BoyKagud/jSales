@@ -57,7 +57,7 @@ public class Users {
 //		sql.destruct();
 	}
 	
-	public int login(String uname, String pword) throws Throwable {
+	public Integer login(String uname, String pword) throws Throwable {
 		md5 enc = new md5();
 		SQLite_helper log = new SQLite_helper();
 		ResultSet user = log.retrieve("users","username", uname);

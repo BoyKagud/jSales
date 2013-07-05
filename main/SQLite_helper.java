@@ -60,6 +60,16 @@ public class SQLite_helper {
             		"`sold` INTEGER NOT NULL" +
             		");");
             pst.executeUpdate();
+            
+            pst = con.prepareStatement("CREATE TABLE IF NOT EXISTS sales( " +
+            		"`id` INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            		"`date` DATE NOT NULL, " +
+            		"`item` INTEGER NOT NULL, " +
+            		"`quantity` INTEGER NOT NULL, " +
+            		"`price` DOUBLE NOT NULL, " +
+            		"FOREIGN KEY(item) REFERENCES items(id)" +
+            		");");
+            pst.executeUpdate();
 
             // create a default user
             setDefUser();
