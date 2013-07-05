@@ -58,6 +58,7 @@ public class Reciept extends JFrame {
 		panel.add(btnNewButton);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		contentPane.add(table, BorderLayout.CENTER);
 		table.setModel(model);
 		

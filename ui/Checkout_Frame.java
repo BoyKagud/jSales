@@ -59,16 +59,23 @@ public class Checkout_Frame extends JFrame {
 		cashField.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
+				try {
+					cash = Double.parseDouble(cashField.getText());
+					change = cash-total;
+					lblCha.setText(change+" Php");
+					btnDone.setEnabled(true);
+				} catch (Throwable e1) {
+					e1.printStackTrace();
+				}
 				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					dispose();
 					try {
-						cash = Double.parseDouble(cashField.getText());
-						change = cash-total;
-						lblCha.setText(change+" Php");
-						btnDone.setEnabled(true);
-					} catch (Throwable e1) {
-						e1.printStackTrace();
+						new Reciept(md, total, cash, change);
+					} catch (ParseException l) {
+						// TODO Auto-generated catch block
+						l.printStackTrace();
 					}
-				} 
+				}
 			}
 		});
 		cashField.setColumns(10);

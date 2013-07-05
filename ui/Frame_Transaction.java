@@ -26,7 +26,7 @@ import java.awt.event.MouseEvent;
 public class Frame_Transaction extends JPanel {
 
 	private JPanel panel_ProductEntry;
-	private JTextField txt_Code;
+	private static JTextField txt_Code;
 	private JLabel label_ProductCode;
 	private JLabel lblUnits;
 	private JTextField txt_Units;
@@ -85,6 +85,7 @@ public class Frame_Transaction extends JPanel {
 		});
 		panel_ProductEntry.add(txt_Code);
 		txt_Code.setColumns(10);
+		txt_Code.requestFocus();
 		
 		lblUnits = new JLabel("Units");
 		panel_ProductEntry.add(lblUnits);
@@ -134,6 +135,10 @@ public class Frame_Transaction extends JPanel {
 		panel = new JPanel();
 		add(panel, BorderLayout.NORTH);
 		setVisible(true);
+	}
+	
+	public static void deffaultFocus() {
+		txt_Code.requestFocus();
 	}
 	
 	private void addItem() throws Throwable {

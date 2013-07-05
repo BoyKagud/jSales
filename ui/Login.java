@@ -114,7 +114,8 @@ public class Login extends JFrame implements KeyListener{
 			Auth_frame.auth_prompt(null);
 			dispose();
         } else {
-            new MainFrame(auth);
+            MainFrame m = new MainFrame(auth);
+            m.defaultView();
             dispose();
         }
 	}

@@ -43,9 +43,9 @@ public class MainFrame {
 	private final JPanel logoOnFrame = new JPanelWithBgImage(ii);
 	private int logoWidth = 50;
 	private int logoHeight = (int) Math.ceil(((double)logoWidth / ii.getIconWidth()) * (ii.getIconHeight()));
-	JFrame mainFrame;
+	static JFrame mainFrame;
 	JPanel inventoryPane;
-	JPanel transactionPane;
+	static JPanel transactionPane;
 	JPanel HRPane;
 	final JPanel menuPanel = new JPanel() {
         @Override
@@ -147,6 +147,8 @@ public class MainFrame {
 			JMenuItem Transaction = new buttonHoverEffect(menuPanel, "Transaction");
 			
 			JMenuItem hr = new buttonHoverEffect(menuPanel, "Human Resource");
+
+			JMenuItem about = new buttonHoverEffect(menuPanel, "About");
 													
 			JMenuItem logout = new buttonHoverEffect(menuPanel, "LogOut");
 			logout.setHorizontalAlignment(SwingConstants.CENTER);
@@ -160,12 +162,13 @@ public class MainFrame {
 			if(admin == 1) this.add(Inventory);
 			this.add(Transaction);
 			if(admin == 1) this.add(hr);
+			this.add(about);
 			this.add(Box.createGlue());
 			this.add(logout);
 			
 //			this.setOpaque(true);
 		}
-				
+						
 		private void logout() {
 			int selection = JOptionPane.showConfirmDialog(
 	                null
@@ -194,7 +197,7 @@ public class MainFrame {
 		    this.addMouseListener(new java.awt.event.MouseAdapter() {
 				@Override
 				public void mouseReleased(MouseEvent arg0) {
-					if(!name.equals("LogOut")) {
+					if(!name.equals("LogOut") && !name.equals("About")) {
 						BorderLayout k = (BorderLayout) mainFrame.getContentPane().getLayout();
 						k.getLayoutComponent(BorderLayout.CENTER).setVisible(false);
 						mainFrame.remove(k.getLayoutComponent(BorderLayout.CENTER));
@@ -207,13 +210,16 @@ public class MainFrame {
 							transactionPane.setVisible(true);
 							mainFrame.getContentPane().add(transactionPane, BorderLayout.CENTER);
 							k.getLayoutComponent(BorderLayout.CENTER).setVisible(true);
+							Frame_Transaction.deffaultFocus();
 						} else if(name.equals("Human Resource")) {
 							HRPane.setVisible(true);
 							mainFrame.getContentPane().add(HRPane, BorderLayout.CENTER);
 							k.getLayoutComponent(BorderLayout.CENTER).setVisible(true);
-						} 
-					
-					}				
+						}
+					} 
+					if(name.equals("About")) {
+						Frame_About.ui();
+					} 		
 				}
 		        public void mouseEntered(java.awt.event.MouseEvent evt) {
 		        	setForeground(Color.WHITE);
@@ -224,6 +230,16 @@ public class MainFrame {
 		        });
 		}
 		
+	}
+
+	public void defaultView() {
+		BorderLayout k = (BorderLayout) mainFrame.getContentPane().getLayout();
+		k.getLayoutComponent(BorderLayout.CENTER).setVisible(false);
+		mainFrame.remove(k.getLayoutComponent(BorderLayout.CENTER));
+		transactionPane.setVisible(true);
+		mainFrame.getContentPane().add(transactionPane, BorderLayout.CENTER);
+		k.getLayoutComponent(BorderLayout.CENTER).setVisible(true);
+		Frame_Transaction.deffaultFocus();
 	}
 	
 }
