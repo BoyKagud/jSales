@@ -107,9 +107,19 @@ public class Frame_Inventory extends JPanel {
 			}
 		});
 		panel.add(button_Refresh);
+		
+		JButton add_newShipment = new JButton("Add New Shipment");
+		button_Refresh.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				refreshTable();
+			}
+		});
+		panel.add(add_newShipment);
+		
 		setVisible(true);
 	}
-	
+		
 	private void init() throws Throwable {
 		modelInventory.addColumn("Product ID");
 		modelInventory.addColumn("Product Name");

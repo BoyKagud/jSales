@@ -74,6 +74,15 @@ public class SQLite_helper {
             		"FOREIGN KEY(item) REFERENCES items(id)" +
             		");");
             pst.executeUpdate();
+            
+            pst = con.prepareStatement("CREATE TABLE IF NOT EXISTS shipments(" +
+            		"`id` INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            		"`date` DATE NOT NULL, " +
+            		"`item` INTEGER NOT NULL, " +
+            		"`quantity` INTEGER NOT NULL, " +
+            		"FOREIGN KEY(item) REFERENCES items(id)" +
+            		");");
+            pst.executeUpdate();
 
             // create a default user
             setDefUser();
